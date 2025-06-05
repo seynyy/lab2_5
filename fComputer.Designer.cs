@@ -48,11 +48,13 @@ namespace lab2_5
             this.lbProcessor = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cbIsLaptop = new System.Windows.Forms.CheckBox();
             this.gpData.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpData
             // 
+            this.gpData.Controls.Add(this.cbIsLaptop);
             this.gpData.Controls.Add(this.tbOS);
             this.gpData.Controls.Add(this.tbNetworkCard);
             this.gpData.Controls.Add(this.tbSoundCard);
@@ -199,6 +201,15 @@ namespace lab2_5
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cbIsLaptop
+            // 
+            this.cbIsLaptop.Location = new System.Drawing.Point(97, 360);
+            this.cbIsLaptop.Name = "cbIsLaptop";
+            this.cbIsLaptop.Size = new System.Drawing.Size(171, 31);
+            this.cbIsLaptop.TabIndex = 14;
+            this.cbIsLaptop.Text = "Ноутбук";
+            this.cbIsLaptop.UseVisualStyleBackColor = true;
+            // 
             // fComputer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,6 +227,8 @@ namespace lab2_5
             this.gpData.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.CheckBox cbIsLaptop;
 
         private System.Windows.Forms.Button btnOk;
 

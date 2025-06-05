@@ -16,13 +16,60 @@ namespace lab2_5
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Computer.Processor = tbProcessor.Text.Trim();
-            Computer.Ram = tbRam.Text.Trim();
-            Computer.Drive = tbDrive.Text.Trim();
-            Computer.VideoCard = tbVideoCard.Text.Trim();
-            Computer.SoundCard = tbSoundCard.Text.Trim();
-            Computer.NetworkCard = tbNetworkCard.Text.Trim();
-            Computer.OperatingSystem = tbOS.Text.Trim();
+            if (Computer == null)
+                switch (cbIsLaptop.Checked)
+                {
+                    case true:
+                        Computer = new Laptop();
+                        break;
+                    case false:
+                        Computer = new Computer();
+                        break;
+                }
+            else
+            {
+                var processor = Computer.Processor;
+                var ram = Computer.Ram;
+                var drive = Computer.Drive;
+                var videoCard = Computer.VideoCard;
+                var soundCard = Computer.SoundCard;
+                var networkCard = Computer.NetworkCard;
+                var operatingSystem = Computer.OperatingSystem;
+
+                if (cbIsLaptop.Checked && !(Computer is Laptop))
+                {
+                    Computer = new Laptop();
+                    Computer.Processor = processor;
+                    Computer.Ram = ram;
+                    Computer.Drive = drive;
+                    Computer.VideoCard = videoCard;
+                    Computer.SoundCard = soundCard;
+                    Computer.NetworkCard = networkCard;
+                    Computer.OperatingSystem = operatingSystem;
+                }
+
+                else if (!cbIsLaptop.Checked && (Computer is Laptop))
+                {
+                    Computer = new Computer();
+                    Computer.Processor = processor;
+                    Computer.Ram = ram;
+                    Computer.Drive = drive;
+                    Computer.VideoCard = videoCard;
+                    Computer.SoundCard = soundCard;
+                    Computer.NetworkCard = networkCard;
+                    Computer.OperatingSystem = operatingSystem;
+                }
+                else
+                {
+                    Computer.Processor = tbProcessor.Text.Trim();
+                    Computer.Ram = tbRam.Text.Trim();
+                    Computer.Drive = tbDrive.Text.Trim();
+                    Computer.VideoCard = tbVideoCard.Text.Trim();
+                    Computer.SoundCard = tbSoundCard.Text.Trim();
+                    Computer.NetworkCard = tbNetworkCard.Text.Trim();
+                    Computer.OperatingSystem = tbOS.Text.Trim();
+                }
+            }
 
             DialogResult = DialogResult.OK;
         }

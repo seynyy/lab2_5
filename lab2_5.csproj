@@ -63,6 +63,9 @@
         </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <EmbeddedResource Include="fComputer.resx">
+          <DependentUpon>fComputer.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="fMain.resx">
             <DependentUpon>fMain.cs</DependentUpon>
         </EmbeddedResource>
