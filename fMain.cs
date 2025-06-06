@@ -15,7 +15,8 @@ namespace lab2_5
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            IComputer computer = new Computer();
+            // Don't create Computer here, let fComputer decide
+            IComputer computer = null;
             var fComputer = new fComputer(computer);
             if (fComputer.ShowDialog() == DialogResult.OK)
             {
@@ -187,6 +188,7 @@ namespace lab2_5
                     {
                         string[] parts = line.Split('\t');
                         if (parts.Length != 8) continue;
+                        // Always creates Computer, never Laptop
                         IComputer computer = new Computer
                         {
                             Processor = parts[0],

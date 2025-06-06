@@ -26,6 +26,17 @@ namespace lab2_5
                         Computer = new Computer();
                         break;
                 }
+            // Assign form fields to the new Computer/Laptop
+            if (Computer != null && Computer.Processor == null)
+            {
+                Computer.Processor = tbProcessor.Text.Trim();
+                Computer.Ram = tbRam.Text.Trim();
+                Computer.Drive = tbDrive.Text.Trim();
+                Computer.VideoCard = tbVideoCard.Text.Trim();
+                Computer.SoundCard = tbSoundCard.Text.Trim();
+                Computer.NetworkCard = tbNetworkCard.Text.Trim();
+                Computer.OperatingSystem = tbOS.Text.Trim();
+            }
             else
             {
                 var processor = Computer.Processor;
